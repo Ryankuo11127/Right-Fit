@@ -493,8 +493,8 @@ def create_checkout_session(user_id: str = Form(...)):
                 "price": "price_1TCOL5RPpZjFV74z9wkOl9Uk",
                 "quantity": 1,
             }],
-            success_url="http://127.0.0.1:8000/docs?user_id=" + user_id,
-            cancel_url="http://127.0.0.1:8000/docs",
+            success_url="https://deft-style-smart-fit.base44.app?user_id=" + user_id,
+            cancel_url="https://deft-style-smart-fit.base44.app",
         )
 
         return {"url": session.url}
