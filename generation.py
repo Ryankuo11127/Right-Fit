@@ -495,6 +495,9 @@ def create_checkout_session(user_id: str = Form(...)):
             }],
             success_url="https://deft-style-smart-fit.base44.app?user_id=" + user_id,
             cancel_url="https://deft-style-smart-fit.base44.app",
+            metadata={
+                "user_id": user_id
+            }
         )
 
         return {"url": session.url}
@@ -513,7 +516,7 @@ async def stripe_webhook(request: Request):
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
 
-        user_id = session["success_url"].split("user_id=")[-1]
+        user_id = session["metadata"]["user_id"]
 
         user = get_or_create_user(user_id)
         update_user_credits(user_id, user["credits"] + 1)
