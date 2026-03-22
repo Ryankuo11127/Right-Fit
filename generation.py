@@ -490,7 +490,7 @@ def create_checkout_session(user_id: str = Form(...)):
             payment_method_types=["card"],
             mode="payment",
             line_items=[{
-                "price": "price_1TCOL5RPpZjFV74z9wkOl9Uk",
+                "price": "price_1TDu2NIZcfjW8XYXtVCxnHbd",
                 "quantity": 1,
             }],
             success_url="https://deft-style-smart-fit.base44.app?user_id=" + user_id,
