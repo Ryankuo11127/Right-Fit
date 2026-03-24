@@ -9,7 +9,7 @@ app = FastAPI()
 # CORS (allows frontend to call backend)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://deft-style-smart-fit.base44.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
