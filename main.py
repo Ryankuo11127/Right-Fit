@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from generation import router as generation_router
+from stripe_routes import router as stripe_router
 from database import get_or_create_user
 
 app = FastAPI()
@@ -15,7 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(generation_router)
-
+app.include_router(stripe_router)
 
 @app.get("/")
 def home():
